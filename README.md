@@ -1,6 +1,6 @@
 # Identificación-de-Nombre-de-Canciones
 El siguiente repositorio contiene la documentación y códigos generados para la creación de un algoritmo de identificación de canciones.
-Basado en la situación problema '¿Cúal es el nombre de esa canción?' del curso [Análisis de métodos matematicos para la física](https://pi-21.tecmty.com/detalle/212)
+Basado en la situación problema '¿Cúal es el nombre de esa canción?' del curso [Análisis de métodos matemáticos para la física](https://pi-21.tecmty.com/detalle/212)
 
 ## Contenido
 
@@ -20,13 +20,13 @@ Siendo considerado en el módulo **rec_song.m**, se hace uso de parámetros como
 
 ### Procesado de señal
 
-El módulo **principal.m**, grafica la señal a lo largo de tiempo, aprovechando el módulo **separaFourer.m** para representar la señal en el dominio de frecuencias a través del comando [FFT](https://www.mathworks.com/help/matlab/ref/fft.html). La amplitud de las frecuencias es normalizada y devuelta a **principal.m** a través de una matriz de 2500 \times (número de segundos registrados). Se añade la validación de melodía, el cual a través de identificación de máximos, asegura que el registro de sonido representa una melodía y no ruido solamente.
+El módulo **principal.m**, grafica la señal a lo largo de tiempo, aprovechando el módulo **separaFourer.m** para representar la señal en el dominio de frecuencias a través del comando [FFT](https://www.mathworks.com/help/matlab/ref/fft.html). La amplitud de las frecuencias es normalizada y devuelta a **principal.m** a través de una matriz de 2500 \times (número de segundos registrados). Se añade la validación de melodía, el cual, a través de identificación de máximos, asegura que el registro de sonido representa una melodía y no ruido solamente.
 
 ![Gráfico generado de la señal registrada en espacio temporal y espacio de frecuencias](Documentación/FrecuenciasRegistradas.png)
 
 ### Identificador
 
-Se considera la distancia temporal entre los puntos significativos considerados, limitandose a encontrar la diferencia temporales de cada frecuencia con 3 frecuecias contiguas; esto reduce el costo de almacenamiento y procesamiento considerablemente. El resultado de esto ya representa el identificador de la señal analizada.
+Se considera la distancia temporal entre los puntos significativos considerados, limitandose a encontrar la diferencia temporal de cada frecuencia con 3 frecuecias contiguas; esto reduce el costo de almacenamiento y procesamiento considerablemente. El resultado de esto ya representa el identificador de la señal analizada.
 
 ![Graficación de puntos significativos, utilizado como identificador](Documentación/PuntosSignificativos.png)
 
@@ -40,11 +40,13 @@ Finalmente, el módulo **rec_song.m** identifica las canciones disponibles en di
 
 ### Limitantes
 
-- Segmentación de Sonido: El código procesa la canción a través de segmentaciones de 10 segundos, por lo que no es capaz de analizar el residuo de una canción. Por ejemplo, solo registraría los primeros 60 segundos de una canción de 63 segundos.
-- Existencia en base de datos: Es necesario crear el identificador primero para ser capaz de compararlo con el registro. Si se prueba con una canción que no sea parte de la base de datos, se identificará la canción con mayor similitud.
-- Almacenamiento: Existen áreas de oportunidad en la optimización del código que dificultarían su replicación a gran escala.
-- Tolerancias: Multiples asunciones son hechas en el código, simplificación de procesos, aplicación de intervalos y más consideraciones que terminan por establecer una probabilidad de éxito y no una predicción completa.
+- Segmentación de Sonido: el código procesa la canción a través de segmentaciones de 10 segundos, por lo que no es capaz de analizar el residuo de una canción. Por ejemplo, solo registraría los primeros 60 segundos de una canción de 63 segundos.
+- Existencia en base de datos: es necesario crear el identificador primero para ser capaz de compararlo con el registro. Si se prueba con una canción que no sea parte de la base de datos, se identificará la canción con mayor similitud.
+- Almacenamiento: existen áreas de oportunidad en la optimización del código que dificultarían su replicación a gran escala.
+- Tolerancias: múltiples asunciones son hechas en el código, simplificación de procesos, aplicación de intervalos y más consideraciones que terminan por establecer una probabilidad de éxito y no una predicción completa.
 
 ## Conclusión
 
 El objetivo de este proyecto fue el entendimiento de los procesos requeridos en el procesamiento de sonido y la manera en la que el ser humano ha creado soluciones cotidianas a partir de fundamentos matemáticos. Se entendió una parte del camino que el ser humano ha tomado para resolver los problemas que se presentan, apoyándose de hechos y contribuciones pasadas para dar soluciones cada vez más complejas.
+
+
