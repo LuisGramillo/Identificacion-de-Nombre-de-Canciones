@@ -4,7 +4,7 @@ Basado en la situación problema '¿Cúal es el nombre de esa canción?' del cur
 
 ## Contenido
 
-El repositorio está compuesto por dos carpetas principales, encontrando en 'Documentación' el reporte generado para la descripción del proyecto, el orden de ejecución del programa y el alcance del mismo. En la sección "Codigo" se encuentran los archivos .m requeridos para la ejecución completa del proyecto, cabe señalar que el proyecto fue diseñado en el software [MATLAB](https://es.mathworks.com/products/matlab.html), por lo que se requerirá del software para ser capaz de ejecutarlo.
+El repositorio está compuesto por dos carpetas principales, encontrando en 'Documentación' el reporte generado para la descripción del proyecto, el orden de ejecución del programa y el alcance del mismo. En la sección 'Código' se encuentran los archivos .m requeridos para la ejecución completa del proyecto, cabe señalar que el proyecto fue diseñado en el software [MATLAB](https://es.mathworks.com/products/matlab.html), por lo que se requerirá del software para ser capaz de ejecutarlo.
 
 ## Créditos
 
@@ -21,6 +21,8 @@ Siendo considerado en el módulo **rec_song.m**, se hace uso de parámetros como
 ### Procesado de señal
 
 El módulo **principal.m**, grafica la señal a lo largo de tiempo, aprovechando el módulo **separaFourer.m** para representar la señal en el dominio de frecuencias a través del comando [FFT](https://www.mathworks.com/help/matlab/ref/fft.html). La amplitud de las frecuencias es normalizada y devuelta a **principal.m** a través de una matriz de 2500 \times (número de segundos registrados). Se añade la validación de melodía, el cual a través de identificación de máximos, asegura que el registro de sonido representa una melodía y no ruido solamente.
+
+![Gráfico geenrado de la señal registrada en espacio temporal y espacio de frecuencias](Documentación/FrecuenciasRegistradas.png)
 
 ### Identificador
 
