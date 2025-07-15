@@ -22,11 +22,13 @@ Siendo considerado en el módulo **rec_song.m**, se hace uso de parámetros como
 
 El módulo **principal.m**, grafica la señal a lo largo de tiempo, aprovechando el módulo **separaFourer.m** para representar la señal en el dominio de frecuencias a través del comando [FFT](https://www.mathworks.com/help/matlab/ref/fft.html). La amplitud de las frecuencias es normalizada y devuelta a **principal.m** a través de una matriz de 2500 \times (número de segundos registrados). Se añade la validación de melodía, el cual a través de identificación de máximos, asegura que el registro de sonido representa una melodía y no ruido solamente.
 
-![Gráfico geenrado de la señal registrada en espacio temporal y espacio de frecuencias](Documentación/FrecuenciasRegistradas.png)
+![Gráfico generado de la señal registrada en espacio temporal y espacio de frecuencias](Documentación/FrecuenciasRegistradas.png)
 
 ### Identificador
 
 Se considera la distancia temporal entre los puntos significativos considerados, limitandose a encontrar la diferencia temporales de cada frecuencia con 3 frecuecias contiguas; esto reduce el costo de almacenamiento y procesamiento considerablemente. El resultado de esto ya representa el identificador de la señal analizada.
+
+![Graficación de puntos significativos, utilizado como identificador](Documentación/PuntosSignificativos.png)
 
 ### Creación de Base de datos
 
